@@ -92,16 +92,8 @@ resource "aws_s3_bucket" "six" {
   bucket = "furkhan-bucket"
 }
 
-resource "aws_iam_user" "seven" {
-for_each = var.user_names
-name = each.value
-}
-
-variable "user_names" {
-description = "*"
-type = list(string)
-default = ["new", "news", "newses", "no"]
-}
+resource "aws-iam_user" seven"
+name = "furkhan1512"
 
 resource "aws_ebs_volume" "eight" {
  availability_zone = "ap-south-1a"
