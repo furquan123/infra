@@ -1,13 +1,13 @@
 provider "aws" {
 region = "ap-south-1"
-access_key = "AKIARBSTPWJWHOKSRUSU"
-secret_key = "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
+access_key = "AKIAWDHXRCZ4RY7C2BPQ"
+secret_key = "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"
 }
 
 resource "aws_instance" "one" {
-  ami             = ""ami-0700df939e7249d03
+  ami             = "ami-0a5ac53f63249fba0"
   instance_type   = "t2.micro"
-  key_name        = "zulum"
+  key_name        = "devops"
   vpc_security_group_ids = [aws_security_group.five.id]
   availability_zone = "ap-south-1"
   user_data       = <<EOF
@@ -16,7 +16,7 @@ sudo -i
 yum install httpd -y
 systemctl start httpd
 chkconfig httpd on
-echo "hai all this is my app created by terraform infrastructurte by raham sir server-1" > /var/www/html/index.html
+echo "hai all this is my app created by terraform infrastructurte by furkhan sir-1" > /var/www/html/index.html
 EOF
   tags = {
     Name = "web-server-1"
@@ -24,9 +24,9 @@ EOF
 }
 
 resource "aws_instance" "two" {
-  ami             = "ami-0700df939e7249d03"
+  ami             = "ami-0a5ac53f63249fba0"
   instance_type   = "t2.micro"
-  key_name        = "zulum"
+  key_name        = "devops"
   vpc_security_group_ids = [aws_security_group.five.id]
   availability_zone = "ap-south-1"
   user_data       = <<EOF
@@ -43,9 +43,9 @@ EOF
 }
 
 resource "aws_instance" "three" {
-  ami             = ""ami-0700df939e7249d03"
-  instance_type   = "t2.micro"
-  key_name        = "zulum"
+  ami             = ""ami-0a5ac53f63249fba0"
+  instance_type   = "t2.large"
+  key_name        = "devops"
   vpc_security_group_ids = [aws_security_group.five.id]
   availability_zone = "ap-south-1"
   tags = {
@@ -54,9 +54,9 @@ resource "aws_instance" "three" {
 }
 
 resource "aws_instance" "four" {
-  ami             = "ami-0700df939e7249d03"
+  ami             = "ami-0a5ac53f63249fba0"
   instance_type   = "t2.micro"
-  key_name        = "zulum"
+  key_name        = "devops"
   vpc_security_group_ids = [aws_security_group.five.id]
   availability_zone = "ap-south-1a"
   tags = {
@@ -100,13 +100,13 @@ name = each.value
 variable "user_names" {
 description = "*"
 type = set(string)
-default = ["user1", "user2", "user3", "user4"]
+default = ["furkhan1", "nouman1", "naseem1", "sayeed1"]
 }
 
 resource "aws_ebs_volume" "eight" {
  availability_zone = "ap-south-1"
-  size = 40
+  size = 20
   tags = {
-    Name = "ebs-001"
+    Name = "furkhan-ebs"
   }
 }
