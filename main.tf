@@ -92,7 +92,7 @@ resource "aws_s3_bucket" "six" {
   bucket = "furkhan-bucket"
 }
 
-resource "aws-iam_user" seven"
+resource "aws_iam_user" seven"
 name = "furkhan1512"
 
 resource "aws_ebs_volume" "eight" {
