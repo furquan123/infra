@@ -89,7 +89,7 @@ resource "aws_security_group" "five" {
 }
 
 resource "aws_s3_bucket" "six" {
-  bucket = "furkhanterra7gsywgys7889900prodenvgshj"
+  bucket = "furkhan-bucket"
 }
 
 resource "aws_iam_user" "seven" {
