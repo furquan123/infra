@@ -9,7 +9,7 @@ resource "aws_instance" "one" {
   instance_type   = "t2.micro"
   key_name        = "devops"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "ap-south-1"
+  availability_zone = "ap-south-1a"
   user_data       = <<EOF
 #!/bin/bash
 sudo -i
@@ -28,7 +28,7 @@ resource "aws_instance" "two" {
   instance_type   = "t2.micro"
   key_name        = "devops"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "ap-south-1"
+  availability_zone = "ap-south-1a"
   user_data       = <<EOF
 #!/bin/bash
 sudo -i
@@ -47,7 +47,7 @@ resource "aws_instance" "three" {
   instance_type   = "t2.large"
   key_name        = "devops"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "ap-south-1"
+  availability_zone = "ap-south-1b"
   tags = {
     Name = "app-server-1"
   }
@@ -104,7 +104,7 @@ default = ["furkhan1", "nouman1", "naseem1", "sayeed1"]
 }
 
 resource "aws_ebs_volume" "eight" {
- availability_zone = "ap-south-1"
+ availability_zone = "ap-south-1a"
   size = 20
   tags = {
     Name = "furkhan-ebs"
